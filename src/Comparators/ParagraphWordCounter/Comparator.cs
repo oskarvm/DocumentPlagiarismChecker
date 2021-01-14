@@ -31,7 +31,8 @@ namespace DocumentPlagiarismChecker.Comparators.ParagraphWordCounter
         }  
         
         /// <summary>
-        /// Compta quantes paraules i quantes vegades apareixen dins de cada paràgraf en un document i comprova el percentatge de coincidència.        /// </summary>
+        /// Compta quantes paraules i quantes vegades apareixen dins de cada paràgraf en un document i comprova el percentatge de coincidència.        
+        /// </summary>
         /// <returns>Els resultats de la coincidència.</returns>
         public override ComparatorMatchingScore Run(){     
             //Aquest ordre està destinat a millorar el rendiment
@@ -60,7 +61,8 @@ namespace DocumentPlagiarismChecker.Comparators.ParagraphWordCounter
         }
 
         /// <summary>
-        /// Compara la mostra amb el fitxer donat i exclou els paràgrafs que produeixen una falsa coincidència positiva entre la mostra i el document.        /// </summary>
+        /// Compara la mostra amb el fitxer donat i exclou els paràgrafs que produeixen una falsa coincidència positiva entre la mostra i el document.        
+        /// </summary>
         private void ExcludeSampleExactMatches(){
             if(this.Sample == null) return;
 
