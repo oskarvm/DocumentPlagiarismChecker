@@ -31,11 +31,10 @@ namespace DocumentPlagiarismChecker.Comparators.ParagraphWordCounter
         }  
         
         /// <summary>
-        /// Counts how many words and how many times appears within each paragraph in a document, and checks the matching percentage.
-        /// </summary>
-        /// <returns>The matching's results.</returns>
+        /// Compta quantes paraules i quantes vegades apareixen dins de cada paràgraf en un document i comprova el percentatge de coincidència.        /// </summary>
+        /// <returns>Els resultats de la coincidència.</returns>
         public override ComparatorMatchingScore Run(){     
-            //This order is meant to improving performance
+            //Aquest ordre està destinat a millorar el rendiment
             ExcludeSampleExactMatches(); 
             ExcludeSamplePartialMatches(this.Left, 0.70f);  //TODO: threshold value must be get from settings; check if can be removed
             ExcludeSamplePartialMatches(this.Right, 0.70f);  //TODO: threshold value must be get from settings; check if can be removed
@@ -61,8 +60,7 @@ namespace DocumentPlagiarismChecker.Comparators.ParagraphWordCounter
         }
 
         /// <summary>
-        /// Compares the sample with the given file and exclude the paragraphs that produces a false positive match between the sample an the document.
-        /// </summary>
+        /// Compara la mostra amb el fitxer donat i exclou els paràgrafs que produeixen una falsa coincidència positiva entre la mostra i el document.        /// </summary>
         private void ExcludeSampleExactMatches(){
             if(this.Sample == null) return;
 
